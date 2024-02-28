@@ -8,6 +8,7 @@ using namespace std;
 
 class Computer : public Player{
 public:
+    // implement the virtual functions from player
     char makeMove();
     string getName();
 };

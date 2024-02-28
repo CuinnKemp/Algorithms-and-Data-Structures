@@ -4,6 +4,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// abstract class that has children Human and Computer
 class Player {
 public:
     virtual char makeMove() = 0;

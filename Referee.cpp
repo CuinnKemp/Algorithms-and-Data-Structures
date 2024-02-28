@@ -15,20 +15,23 @@ Referee::Referee(){
 }
 
 int Referee::move2Number(char move){
+    // convert the char to an integer used for the result square accessing
     if (move == 'R') return 0;
     if (move == 'P') return 1;
     if (move == 'S') return 2;
 
+    // -1 invalid input has been encountered
     return -1;
 }
 
 Player* Referee::refGame(Player * player1, Player * player2){
-    
-    char res1 = player1->makeMove(), res2 = player2->makeMove();
+    // collect the players moves
+    int move1 = move2Number(player1->makeMove()), move2 = move2Number(player2->makeMove());
 
-    int move1 = move2Number(res1), move2 = move2Number(res2);
-
+    // get the winners value
     int winner =  this->resultSquare[move1][move2];
+    
+    // if winner is 1 return p1 if 2 return p2 if 0 return nullptr
     if (winner == 1) return player1;
     else if (winner == 2) return player2;
     return nullptr;
