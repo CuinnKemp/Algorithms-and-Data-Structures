@@ -3,6 +3,10 @@ using namespace std;
 
 #include "Human.h"
 
+Human::Human(){
+    this->name = "Human";
+}
+
 Human::Human(string name){
     this->name = name;
 }
