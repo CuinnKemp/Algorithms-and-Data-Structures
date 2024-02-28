@@ -8,9 +8,10 @@ using namespace std;
 
 class Referee {
 private:
+    vector<vector<int>> resultSquare;
+    int move2Number(char move);
 public:
     Referee();
-
     Player* refGame(Player * player1, Player * player2);
 };
 

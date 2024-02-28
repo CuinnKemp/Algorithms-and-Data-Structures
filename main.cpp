@@ -14,7 +14,7 @@ int main() {
 
     string result = "It's a Tie";
 
-    Player* winner = referee->refGame(p1, p2);
+    Player* winner = referee->refGame(p2, p1);
     if (winner != nullptr){
         result = winner->getName() + " Wins";
     }
