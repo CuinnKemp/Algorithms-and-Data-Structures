@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 #include "Player.h"
 #include "Referee.h"
 #include "MoveFactory.h"
@@ -16,7 +13,6 @@ Player* Referee::refGame(Player * player1, Player * player2){
     Move* move2 = char2Move(player2->makeMove());
 
     if (move1 == nullptr || move2 == nullptr){
-        cout << "INVALID INPUT" << endl;
         return nullptr;
     }
 

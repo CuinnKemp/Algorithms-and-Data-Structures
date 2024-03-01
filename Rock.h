@@ -1,8 +1,6 @@
 #ifndef ROCK
 #define ROCK
 
-#include <bits/stdc++.h>
-
 #include "Move.h"
 
 class Rock : public Move {

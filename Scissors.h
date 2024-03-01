@@ -1,8 +1,6 @@
 #ifndef SCISSORS
 #define SCISSORS
 
-#include <bits/stdc++.h>
-
 #include "Move.h"
 
 class Scissors : public Move {

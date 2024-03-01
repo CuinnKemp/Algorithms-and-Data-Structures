@@ -1,8 +1,6 @@
 #ifndef PAPER
 #define PAPER
 
-#include <bits/stdc++.h>
-
 #include "Move.h"
 
 
