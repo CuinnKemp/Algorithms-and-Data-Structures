@@ -3,7 +3,7 @@ using namespace std;
 
 #include "Player.h"
 #include "Referee.h"
-#include "Moves/MoveFactory.h"
+#include "MoveFactory.h"
 
 Referee::Referee(){
     // row player 1 move
