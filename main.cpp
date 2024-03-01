@@ -8,17 +8,17 @@ using namespace std;
 #include "Human.h"
 
 int main() {
-    Player *p1 = new Computer(), *p2 = new Human("Bill");
+    Player *p1 = new Human("Bill"), *p2 = new Computer();
 
     Referee * referee = new Referee();
 
     string result = "It's a Tie";
 
-    Player* winner = referee->refGame(p2, p1);
+    Player* winner = referee->refGame(p1, p2);
     if (winner != nullptr){
         result = winner->getName() + " Wins";
     }
-
+    
     cout << result << endl;
 
     return 0;

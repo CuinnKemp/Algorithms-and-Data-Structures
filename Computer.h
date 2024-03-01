@@ -2,7 +2,7 @@
 #define COMPUTER
 
 #include <bits/stdc++.h>
-using namespace std;
+// using namespace std;
 
 #include "Player.h"
 

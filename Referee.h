@@ -7,11 +7,6 @@ using namespace std;
 
 
 class Referee {
-private:
-    // used to get the value without needing to do multiple comparisons
-    vector<vector<int>> resultSquare;
-    // converts the char 'R'/'P'/'S' to an integer value 
-    int move2Number(char move);
 public:
     // sets up the referee variable resultSquare
     Referee();
