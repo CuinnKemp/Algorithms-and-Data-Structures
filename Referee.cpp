@@ -20,13 +20,11 @@ Player* Referee::refGame(Player * player1, Player * player2){
 
     if (output == INVALID){
         output = move2->isWinner(move1->getUID());
-        delete move1, move2;
         if (output ==  WINNER) return player2;
         if (output == TIE) return nullptr;
         return player1;
     }
-
-    delete move1, move2;
+    
     if (output ==  WINNER) return player1;
     if (output == TIE) return nullptr;
     return player2;
