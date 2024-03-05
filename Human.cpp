@@ -1,6 +1,5 @@
 #include <iostream>
 #include<string>
-using namespace std;
 
 #include "Human.h"
 
@@ -10,20 +9,20 @@ Human::Human(){
 }
 
 // set name to the provided value
-Human::Human(string name){
+Human::Human(std::string name){
     this->name = name;
 }
 
 // get humans input and return it
 char Human::makeMove(){
     char res;
-    cout << "Enter move:";
-    cin >> res;
+    std::cout << "Enter move:";
+    std::cin >> res;
 
     return res;
 }
 
 // return the humans name
-string Human::getName(){
+std::string Human::getName(){
     return this->name;
 }

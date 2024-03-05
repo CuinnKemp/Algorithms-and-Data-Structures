@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <string>
 
 #include "Computer.h"
 
@@ -9,6 +8,6 @@ char Computer::makeMove(){
 }
 
 // computer will always return "Computer" when getName() is called
-string Computer::getName(){
+std::string Computer::getName(){
     return "Computer";
 }

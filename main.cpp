@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 #include "Player.h"
 #include "Referee.h"
@@ -12,14 +11,14 @@ int main() {
 
     Referee * referee = new Referee();
 
-    string result = "It's a Tie";
+    std::string result = "It's a Tie";
 
     Player* winner = referee->refGame(p1, p2);
     if (winner != nullptr){
         result = winner->getName() + " Wins";
     }
     
-    cout << result << endl;
+    std::cout << result << std::endl;
 
     return 0;
 }
