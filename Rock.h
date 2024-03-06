@@ -6,9 +6,14 @@
 class Rock : public Move {
 private:
     int UID = 2;
+    std::string name = "Rock";
 public:
     int getUID(){
         return UID;
+    }
+
+    std::string getName(){
+        return name;
     }
 
     int isWinner(int Opponent){

@@ -7,9 +7,14 @@
 class Paper : public Move {
 private:
     int UID = 1;
+    std::string name = "Paper";
 public:
     int getUID(){
         return UID;
+    }
+
+    std::string getName(){
+        return name;
     }
 
     int isWinner(int Opponent){

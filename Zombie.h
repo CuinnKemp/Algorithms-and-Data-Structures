@@ -2,15 +2,21 @@
 #define ZOMBIE
 
 #include <unordered_set>
+#include <string>
 
 #include "Move.h"
 
 class Zombie : public Move {
 private:
     int UID = 8;
+    std::string name = "Zombie";
 public:
     int getUID(){
         return UID;
+    }
+
+    std::string getName(){
+        return name;
     }
 
     int isWinner(int Opponent){

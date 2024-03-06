@@ -2,15 +2,21 @@
 #define NINJA
 
 #include <unordered_set>
+#include <string>
 
 #include "Move.h"
 
 class Ninja : public Move {
 private:
     int UID = 7;
+    std::string name = "Ninja";
 public:
     int getUID(){
         return UID;
+    }
+
+    std::string getName(){
+        return name;
     }
 
     int isWinner(int Opponent){

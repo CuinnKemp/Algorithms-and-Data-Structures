@@ -6,9 +6,13 @@
 #define TIE 1
 #define LOSER 2
 
+#include <string>
+
 class Move {
 public:
     virtual int getUID() = 0;
+
+    virtual std::string getName() = 0;
 
     virtual int isWinner(int Opponent) = 0;
 };

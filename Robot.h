@@ -2,15 +2,21 @@
 #define ROBOT
 
 #include <unordered_set>
+#include <string>
 
 #include "Move.h"
 
 class Robot : public Move {
 private:
     int UID = 5;
+    std::string name = "Robot";
 public:
     int getUID(){
         return UID;
+    }
+
+    std::string getName(){
+        return name;
     }
 
     int isWinner(int Opponent){

@@ -8,9 +8,14 @@
 class Scissors : public Move {
 private:
     int UID = 3;
+    std::string name = "Scissors";
 public:
     int getUID(){
         return UID;
+    }
+    
+    std::string getName(){
+        return name;
     }
 
     int isWinner(int Opponent){

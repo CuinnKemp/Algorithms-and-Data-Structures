@@ -2,15 +2,21 @@
 #define PIRATE
 
 #include <unordered_set>
+#include <string>
 
 #include "Move.h"
 
 class Pirate : public Move {
 private:
     int UID = 6;
+    std::string name = "Pirate";
 public:
     int getUID(){
         return UID;
+    }
+
+    std::string getName(){
+        return name;
     }
 
     int isWinner(int Opponent){
