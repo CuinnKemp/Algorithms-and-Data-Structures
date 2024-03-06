@@ -7,7 +7,10 @@
 
 class Monkey : public Move {
 private:
+    // set Monkey UID
     int UID = 4;
+
+    // set move name
     std::string name = "Monkey";
 
 public:

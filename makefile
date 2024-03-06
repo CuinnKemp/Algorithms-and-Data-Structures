@@ -1,5 +1,5 @@
-test: main.cpp Player.cpp Referee.cpp Human.cpp Computer.cpp
-	g++ main.cpp Player.cpp Referee.cpp Human.cpp Computer.cpp -o test
+test: *.cpp
+	g++ -std=c++20 -o main.out -O2 -Wall *.cpp
 
 make main: test
-	./test
+	./main.out

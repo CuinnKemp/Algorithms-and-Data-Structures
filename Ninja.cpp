@@ -1,13 +1,16 @@
 #include "Ninja.h"
 
+// implement getUID
 int Ninja::getUID(){
     return UID;
 }
 
+// implement getName
 std::string Ninja::getName(){
     return name;
 }
 
+// implement is winner
 int Ninja::isWinner(int Opponent){
     if (Opponent > this->UID){
         return INVALID; // invalid Opponent UID

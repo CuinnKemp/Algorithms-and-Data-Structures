@@ -8,6 +8,7 @@
 
 #include <string>
 
+// pure virtual move class
 class Move {
 public:
     virtual int getUID() = 0;
