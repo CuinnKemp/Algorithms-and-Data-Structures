@@ -2,15 +2,19 @@
 #include "Referee.h"
 #include "MoveFactory.h"
 
+#include <iostream>
+using namespace std;
+
 Referee::Referee(){
-    // row player 1 move
-    // col player 2 mo
+    this->move_factory = new MoveFactory;
 }
 
 Player* Referee::refGame(Player * player1, Player * player2){
     // collect the players moves
-    Move* move1 = char2Move(player1->makeMove());
-    Move* move2 = char2Move(player2->makeMove());
+    Move* move1 = move_factory->string_to_move(player1->makeMove());
+    Move* move2 = move_factory->string_to_move(player2->makeMove());
+
+    cout << move1->getUID() << " " << move2->getUID() << endl;
 
     int output = -1;
     if (move1->getUID() >= move2->getUID()){

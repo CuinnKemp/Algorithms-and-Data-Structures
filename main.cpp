@@ -7,7 +7,7 @@
 #include "Human.h"
 
 int main() {
-    Player *p1 = new Human("Bill"), *p2 = new Computer();
+    Player *p1 = new Human("Bill"), *p2 = new Human("Jeff");
 
     Referee * referee = new Referee();
 

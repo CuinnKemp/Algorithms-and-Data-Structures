@@ -8,7 +8,7 @@
 class Computer : public Player{
 public:
     // implement the virtual functions from player
-    char makeMove();
+    std::string makeMove();
     std::string getName();
 };
 

@@ -15,7 +15,7 @@ public:
     Human(std::string name);
 
     // get the move of the player (based on input)
-    char makeMove();
+    std::string makeMove();
 
     // return the name of the player
     std::string getName();

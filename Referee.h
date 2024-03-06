@@ -1,8 +1,11 @@
 #ifndef REFEREE
+#include "MoveFactory.h"
 #include "Player.h"
 
 
 class Referee {
+private: 
+    MoveFactory* move_factory;
 public:
     // sets up the referee variable resultSquare
     Referee();

@@ -14,8 +14,8 @@ Human::Human(std::string name){
 }
 
 // get humans input and return it
-char Human::makeMove(){
-    char res;
+std::string Human::makeMove(){
+    std::string res;
     std::cout << "Enter move:";
     std::cin >> res;
 

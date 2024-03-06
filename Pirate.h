@@ -1,13 +1,13 @@
-#ifndef SCISSORS
-#define SCISSORS
+#ifndef PIRATE
+#define PIRATE
 
-#include<unordered_set>
+#include <unordered_set>
 
 #include "Move.h"
 
-class Scissors : public Move {
+class Pirate : public Move {
 private:
-    int UID = 3;
+    int UID = 6;
 public:
     int getUID(){
         return UID;
@@ -19,18 +19,16 @@ public:
         } else if (Opponent == this->UID){
             return TIE; // tie
         }
-        
-        std::unordered_set<int> losesTo({2});
 
+        // loses to monkey (uid = 4)
+        std::unordered_set<int> losesTo({4});
         if (losesTo.find(Opponent) != losesTo.end()){
             return LOSER;
-        } else {
-            return WINNER;
         }
+        // not a tie or a loss so must be win
+        return WINNER; 
     }
 
 };
 
-
-
-#endif // SCISSORS
+#endif // PIRATE
