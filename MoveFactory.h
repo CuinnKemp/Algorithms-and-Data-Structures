@@ -35,12 +35,6 @@ public:
     Move* string_to_move(std::string move){
         return moves_map[move];
     }
-
-    ~MoveFactory(){
-        for (auto pair : moves_map){
-            delete pair.second;
-        }
-    }
 };
 
 
