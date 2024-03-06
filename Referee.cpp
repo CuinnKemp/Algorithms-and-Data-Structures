@@ -12,21 +12,19 @@ Player* Referee::refGame(Player * player1, Player * player2){
     Move* move1 = char2Move(player1->makeMove());
     Move* move2 = char2Move(player2->makeMove());
 
-    if (move1 == nullptr || move2 == nullptr){
-        return nullptr;
-    }
-
-    int output = move1->isWinner(move2->getUID());
-
-    if (output == INVALID){
+    int output = -1;
+    if (move1->getUID() >= move2->getUID()){
+        output = move1->isWinner(move2->getUID());
+        if (output ==  WINNER) return player1;
+        if (output == TIE) return nullptr;
+        return player2;
+    } else {
         output = move2->isWinner(move1->getUID());
         if (output ==  WINNER) return player2;
         if (output == TIE) return nullptr;
         return player1;
     }
     
-    if (output ==  WINNER) return player1;
-    if (output == TIE) return nullptr;
-    return player2;
+    return nullptr;
 }
 
