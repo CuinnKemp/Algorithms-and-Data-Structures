@@ -11,28 +11,11 @@ private:
     int UID = 8;
     std::string name = "Zombie";
 public:
-    int getUID(){
-        return UID;
-    }
+    int getUID();
 
-    std::string getName(){
-        return name;
-    }
+    std::string getName();
 
-    int isWinner(int Opponent){
-        if (Opponent > this->UID){
-            return INVALID; // invalid Opponent UID
-        } else if (Opponent == this->UID){
-            return TIE; // tie
-        }
-
-        // loses to robot (uid 5) and ninja (uid 7)
-        std::unordered_set<int> losesTo({5,7});
-        if (losesTo.find(Opponent) != losesTo.end()){
-            return LOSER;
-        }
-        return WINNER;
-    }
+    int isWinner(int Opponent);
 
 };
 

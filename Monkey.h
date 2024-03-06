@@ -11,23 +11,11 @@ private:
     std::string name = "Monkey";
 
 public:
-    int getUID(){
-        return UID;
-    }
+    int getUID();
 
-    std::string getName(){
-        return name;
-    }
+    std::string getName();
 
-    int isWinner(int Opponent){
-        if (Opponent > this->UID){
-            return INVALID; // invalid Opponent UID
-        } else if (Opponent == this->UID){
-            return TIE; // tie
-        }
-        return TIE; // there is no UID less than this->UID hence always will be a tie
-    }
-
+    int isWinner(int Opponent);
 };
 
 #endif // MONKEY

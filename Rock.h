@@ -8,23 +8,11 @@ private:
     int UID = 2;
     std::string name = "Rock";
 public:
-    int getUID(){
-        return UID;
-    }
+    int getUID();
 
-    std::string getName(){
-        return name;
-    }
+    std::string getName();
 
-    int isWinner(int Opponent){
-        if (Opponent > this->UID){
-            return INVALID; // invalid Opponent UID
-        } else if (Opponent == this->UID){
-            return TIE; // tie
-        } else {
-            return LOSER;
-        }
-    }
+    int isWinner(int Opponent);
 
 };
 
