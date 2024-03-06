@@ -1,15 +1,15 @@
 #include "Player.h"
 #include "Referee.h"
-#include "MoveFactory.h"
+#include "Move.h"
 
 Referee::Referee(){
-    this->move_factory = new MoveFactory;
+
 }
 
 Player* Referee::refGame(Player * player1, Player * player2){
     // collect the players moves
-    Move* move1 = move_factory->string_to_move(player1->makeMove());
-    Move* move2 = move_factory->string_to_move(player2->makeMove());
+    Move* move1 = player1->makeMove();
+    Move* move2 = player2->makeMove();
 
     int output = -1;
     if (move1->getUID() >= move2->getUID()){

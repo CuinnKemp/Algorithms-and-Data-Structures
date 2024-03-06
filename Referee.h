@@ -4,8 +4,6 @@
 
 
 class Referee {
-private: 
-    MoveFactory* move_factory;
 public:
     // sets up the referee variable resultSquare
     Referee();

@@ -4,6 +4,7 @@
 #include <string>
 
 #include "Player.h"
+#include "Move.h"
 
 class Human : public Player{
 private:
@@ -15,7 +16,7 @@ public:
     Human(std::string name);
 
     // get the move of the player (based on input)
-    std::string makeMove();
+    Move* makeMove();
 
     // return the name of the player
     std::string getName();

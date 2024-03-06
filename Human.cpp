@@ -2,6 +2,7 @@
 #include<string>
 
 #include "Human.h"
+#include "MoveFactory.h"
 
 // default constructor set name to "Human"
 Human::Human(){
@@ -14,12 +15,12 @@ Human::Human(std::string name){
 }
 
 // get humans input and return it
-std::string Human::makeMove(){
+Move* Human::makeMove(){
     std::string res;
     std::cout << "Enter move:";
     std::cin >> res;
 
-    return res;
+    return this->move_factory.string_to_move(res);
 }
 
 // return the humans name

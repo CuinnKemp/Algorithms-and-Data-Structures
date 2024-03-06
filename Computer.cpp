@@ -3,8 +3,8 @@
 #include "Computer.h"
 
 // computer will always return 'R' (rock) when makeMove() is called
-std::string Computer::makeMove(){
-    return "Rock";
+Move* Computer::makeMove(){
+    return this->move_factory.string_to_move("Rock");
 }
 
 // computer will always return "Computer" when getName() is called
