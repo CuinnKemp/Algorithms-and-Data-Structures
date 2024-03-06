@@ -26,8 +26,8 @@ public:
             return TIE; // tie
         }
 
-        // loses to monkey (uid = 4)
-        std::unordered_set<int> losesTo({4});
+        // doesnt lose to anything less than self so always wins
+        std::unordered_set<int> losesTo({});
         if (losesTo.find(Opponent) != losesTo.end()){
             return LOSER;
         }
