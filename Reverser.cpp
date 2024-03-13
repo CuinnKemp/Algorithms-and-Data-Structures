@@ -1,6 +1,4 @@
 #include <cmath>
-#include <iostream>
-using namespace std;
 
 #include "Reverser.h"
 
