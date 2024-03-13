@@ -6,14 +6,20 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
         return 1;
     }
 
+    // check if loadsize has changed
     if (this->cLoadSize == loadSize){
+        // check if there is an entry in the dp
         if (this->dp.find(numCrates) != this->dp.end()){
+            // if there is return it
             return this->dp[numCrates];
         }
     } else{
+        // if it has then change load size and clear the dp
         this->cLoadSize = loadSize;
+        this->dp.clear();
     }
 
+    // initialise a res variable
     int res = 0;
 
     // return the sum of both trees
@@ -23,7 +29,9 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
     } else { // is even
         res = (2 * numTrucks(numCrates/2, loadSize));
     }
-    
-    dp[numCrates] = res;
+
+    // set the dp to be this value
+    this->dp[numCrates] = res;
+    //return the result
     return res;
 }
