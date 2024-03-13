@@ -9,6 +9,7 @@
 
 
 int Reverser::reverseDigit(int value){
+    if (value < 0) return -1;
     int log = log10(value);
     if (log < 1) return value; 
     int last_digit = value - (value/10)*10;
