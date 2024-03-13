@@ -1,9 +1,9 @@
-#ifndef TRUCKLOADS
-#define TRUCKLOADS
+#ifndef EFFICIENTTRUCKLOADS
+#define EFFICIENTTRUCKLOADS
 
 #include <unordered_map>
 
-class Truckloads{
+class EfficientTruckloads{
 private:
     int cLoadSize;
     std::unordered_map<int,int> dp;
@@ -12,4 +12,4 @@ public:
 };
 
 
-#endif //TRUCKLOADS
+#endif //EFFICIENTTRUCKLOADS

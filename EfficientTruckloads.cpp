@@ -1,6 +1,6 @@
 #include "EfficientTruckloads.h"
 
-int Truckloads::numTrucks(int numCrates, int loadSize){
+int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
     // if num crates can fit on truck return 1 (i.e. 1 truck)
     if (numCrates <= loadSize){
         return 1;
