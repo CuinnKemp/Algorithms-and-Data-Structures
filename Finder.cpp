@@ -36,7 +36,7 @@ vector<int> Finder::findSubstrings(string& s1, string& s2) {
     for (int i = 0; i < n; i++){
         if (s1[i] == s2[0]){
             dp[i][0] = 1;
-            if (result.size() < 1){
+            if ((int)result.size() < 1){
                 result.push_back(i);
             }
         }
@@ -45,7 +45,7 @@ vector<int> Finder::findSubstrings(string& s1, string& s2) {
         for (int j = 1; j < n; j++){
             if (s1[i] == s2[j] && dp[i-1][j-1] > 0){
                 dp[i][j] = dp[i-1][j-1] + 1;
-                if (result.size() < j+1){
+                if ((int)result.size() < j+1){
                     result.push_back(i-dp[i][j]+1);
                 }
             }
