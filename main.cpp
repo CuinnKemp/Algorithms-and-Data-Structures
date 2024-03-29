@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    string s1 = "1111", s2 = "112111";
+    string s1 = "4634554567", s2 = "45689";
     Finder f1;
     vector<int> res = f1.findSubstrings(s1, s2);
     for (auto i : res){
