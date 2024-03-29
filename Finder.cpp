@@ -1,35 +1,37 @@
-/*
 // this is the modification of the file provided 
 
 #include "Finder.h"
 using namespace std;
-vector<int> Finder::findSubstrings(string& s1, string& s2) {
-    // init result vector
-    vector<int> result;
 
-    // for loop for range 1->n s1
-    for (size_t i = 1; i <= s2.size(); i++) {
-        // get index of the substring occurance in s2
-        size_t found = string::npos;
-        if (result.size() > 0){
-            found = s1.find(s2.substr(0, i), (size_t)result.back()); // o(len(s1)*len(s2)) opperation
-        } else {
-            found = s1.find(s2.substr(0, i)); // o(len(s1)*len(s2)) opperation
-        }
+// // time complexity O(m(n*m)) -> O(n * m)
+// // compared to the previous version this updated version does not look at parts of the string that will definetly not match
+// vector<int> Finder::findSubstrings(string& s1, string& s2) {
+//     // init result vector
+//     vector<int> result;
 
-        // if the substring is in s1
-        if (found != string::npos) {
-            // append the index to the result vector
-            result.push_back(found);
-        } else {
-            // append -1 to the result vector
-            result.push_back(-1);
-            break;
-        }
-    }
-    return result;
-}
-*/
+//     // for loop for range 1->m s2
+//     for (size_t i = 1; i <= s2.size(); i++) {
+//         // get index of the substring occurance in s2
+//         size_t found;
+//         if (result.size() > 0){
+//             found = s1.find(s2.substr(0, i), (size_t)result.back()); // o(n) opperation
+//         } else {
+//             found = s1.find(s2.substr(0, i)); // o(len(s1)*len(s2)) opperation
+//         }
+
+//         // if the substring is in s1
+//         if (found != string::npos) {
+//             // append the index to the result vector
+//             result.push_back(found);
+//         } else {
+//             // append -1 to the result vector
+//             result.push_back(-1);
+//             break;
+//         }
+//     }
+//     return result;
+// }
+
 
 // this is a far more efficient solution 
 #include "Finder.h"
@@ -37,7 +39,7 @@ using namespace std;
 
 #include <unordered_map>
 
-// function time complexity is O(n*m) n = length of s1 and m = length of s2
+// function time complexity is O(n + m) n = length of s1 and m = length of s2
 vector<int> Finder::findSubstrings(string& s1, string& s2) {
     // n is the size of s1 and m is the size of s2
     // this was mainly so the Big O notation was easy to understand
