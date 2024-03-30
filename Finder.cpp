@@ -84,14 +84,14 @@ vector<int> Finder::findSubstrings(string& s1, string& s2) {
         }
         // if j has reached the end of string s2
         if (j == m){
-            break; // Returning the index of the first occurrence
+            // return the result vector (no -1 needed)
+            return result;
+            break;
         }
     }
 
     // if the pattern was not completely matched then add the -1 to indicate this
-    if (result.size() != s2.size()){
-        result.push_back(-1);
-    }
+    result.push_back(-1);
 
     // return the result vector
     return result;
