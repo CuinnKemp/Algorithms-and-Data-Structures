@@ -2,27 +2,47 @@
 
 #include "QuickSort.h"
 
+#include "RecursiveBinarySearch.h"
+
 #include <vector>
 #include <iostream>
+#include <string>
 
 
 int main(){
-    std::vector<int> list = {1, 3, 5, 4, -5, 100, 7777, 2014};
+    std::string input;
+    std::getline(std::cin, input);
 
-    BubbleSort b1;
-    QuickSort q1;
-
-    std::vector<int> sortedList = b1.sort(list);
-
-    for (auto i : sortedList){
-        std::cout << i << " ";  
+    std::vector<int> list;
+    std::string num;
+    for (int i = 0; i < input.length(); i++){
+        if (input[i] >= '0' && input[i] <= '9'){
+            num.push_back(input[i]);
+        } else if (num.size() > 0){
+            list.push_back(stoi(num));
+            num = "";
+        } else if (num.size() == 0 && input[i] == '-'){
+            num = "-";
+        }
     }
-    std::cout << std::endl;
+    if (input.back() >= '0' && input.back() <= '9'){
+        list.push_back(stoi(num));
+        num = "";
+    }
+    
+    QuickSort sorter;
+    RecursiveBinarySearch searcher;
 
-    sortedList = q1.sort(list);
+    std::vector<int> sortedList = sorter.sort(list);
+    bool oneFound = searcher.search(sortedList, 1);
 
+    if (oneFound){
+        std::cout << "true ";
+    } else {
+        std::cout << "false ";
+    }
     for (auto i : sortedList){
-        std::cout << i << " ";  
+        std::cout << i << " ";
     }
     std::cout << std::endl;
 }
