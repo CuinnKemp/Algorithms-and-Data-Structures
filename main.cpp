@@ -10,6 +10,7 @@
 
 
 int main(){
+    // get input from user
     std::string input;
     std::getline(std::cin, input);
 
@@ -30,17 +31,24 @@ int main(){
         num = "";
     }
     
-    QuickSort sorter;
+    // innit a sorter and searcher object
+    BubbleSort sorter;
     RecursiveBinarySearch searcher;
 
+    // sort the list
     std::vector<int> sortedList = sorter.sort(list);
+
+    // check if one is present in array
     bool oneFound = searcher.search(sortedList, 1);
 
+    // output result of search function
     if (oneFound){
         std::cout << "true ";
     } else {
         std::cout << "false ";
     }
+
+    // output the sorted list
     for (auto i : sortedList){
         std::cout << i << " ";
     }

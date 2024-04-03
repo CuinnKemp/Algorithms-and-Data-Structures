@@ -1,7 +1,63 @@
 #include "QuickSort.h"
 #include <iostream>
 
+// inplace QuickSort
+std::vector<int> QuickSort::sort(std::vector<int> list){
+    // call the quickSort helper function
+    quickSort(list, 0, list.size()-1); // list passed by reference
 
+    // return the list (as it was passed by reference the helper sorts the list given to it)
+    return list;
+}
+
+void QuickSort::quickSort(std::vector<int>& list, int low, int high){
+    // recursion base case
+    if (low >= high){
+        return;
+    }
+
+    // if at least 3 elements within the range then use the third value otherwise use first
+    if (high-low >= 3){
+        std::swap(list[low], list[low+2]);
+    }
+    
+
+    // init left and right pointers to count the values greater and less than the pivot value
+    int left = low+1, right = high;
+    while (left <= right){
+        // while the value at index left is less than the pivot value
+        while (left <= high && list[left] <= list[low]){
+            // increment the left counter
+            left++;
+        }
+
+        // while the value at index right is greater than the pivot value
+        while (right >= low && list[right] > list[low]){
+            // decrement the right value
+            right--;
+        }
+
+        // check whether swap should occur
+        if (left < right){
+            // swap the values
+            std::swap(list[left], list[right]);
+            // incrment left pointer
+            left++;
+            // decrement right pointer
+            right--;
+        }
+
+    }
+
+    // swap the pivot value to  the desired location
+    std::swap(list[low], list[right]);
+
+    // call quicksort on the left and right partitions
+    return  quickSort(list, low, right-1), quickSort(list, right+1, high);;
+}
+
+
+// first attempt (wild space complexity lol)
 // std::vector<int> QuickSort::sort(std::vector<int> list){
 //     // recursive base case (singular element)
 //     if (list.size() <= 1) return list;
@@ -28,43 +84,3 @@
 //     left.insert(left.end(), right.begin(), right.end());
 //     return left;
 // }
-
-
-
-std::vector<int> QuickSort::sort(std::vector<int> list){
-    quickSort(list, 0, list.size()-1); // list passed by reference
-    return list;
-}
-
-void QuickSort::quickSort(std::vector<int>& list, int low, int high){
-    if (low >= high){
-        return;
-    }
-    if (high-low >= 3){
-        std::swap(list[low], list[low+2]);
-    }
-
-    int left = low+1, right = high;
-    while (left <= right){
-        while (left <= high && list[left] <= list[low]){
-            left++;
-        }
-
-        while (right >= low && list[right] > list[low]){
-            right--;
-        }
-
-        if (left < right){
-            std::swap(list[left], list[right]);
-            left++;
-            right--;
-        }
-
-    }
-
-    std::swap(list[low], list[right]);
-
-    quickSort(list, low, right-1);
-    quickSort(list, right+1, high);
-    return;
-}
