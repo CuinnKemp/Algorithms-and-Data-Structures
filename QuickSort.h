@@ -4,7 +4,7 @@
 
 class QuickSort : public Sort {
 private:
-    void quickSort(std::vector<int>& list, low, high);
+    void quickSort(std::vector<int>& list, int low, int high);
 public:
     std::vector<int> sort(std::vector<int> list);
 };
