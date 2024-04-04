@@ -1,7 +1,6 @@
 {
-    "C_Cpp.errorSquiggles": "enabled",
     "files.associations": {
-        "string": "cpp",
+        "*.cpp": "cpp",
         "cctype": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
@@ -39,6 +38,7 @@
         "list": "cpp",
         "map": "cpp",
         "set": "cpp",
+        "string": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "vector": "cpp",
