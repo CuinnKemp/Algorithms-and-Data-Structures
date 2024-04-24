@@ -62,7 +62,7 @@ std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2){
 
     int carry = 0;
     while (twoIt != num2.rend()){
-        *oneIt -= *twoIt - carry;
+        *oneIt -= *twoIt + carry;
         carry = 0;
         if (*oneIt < 0){
             carry = 1;
