@@ -8,7 +8,11 @@ int main(){
 
     LinkedList list(arr, 6);
 
+    list.insertPosition(1, 100);
+
     list.printList();
-    std::cout << list.get(6) << std::endl;
     
+    std::cout << list.search(100) << std::endl;
+
+    std::cout << list.get(5) << std::endl;
 }

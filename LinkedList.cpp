@@ -56,17 +56,17 @@ void LinkedList::insertEnd(int newNum){
 }
 
 void LinkedList::insertPosition(int pos, int newNum){
-    if (pos < 1 || this->head == nullptr || length == 0){
+    if (pos <= 1 || this->head == nullptr || length == 0){
         insertStart(newNum);
         return;
-    } else if (pos >= length){
+    } else if (pos > length){
         insertEnd(newNum);
         return;
     }
 
     Node* pointer = head;
-    int counter = 0;
-    while (counter < pos && pointer->get_link() != nullptr){
+    int counter = 1;
+    while (counter < pos-1 && pointer->get_link() != nullptr){
         pointer = pointer->get_link();
         counter++;
     }
@@ -79,8 +79,8 @@ void LinkedList::insertPosition(int pos, int newNum){
 }
 
 bool LinkedList::deletePosition(int pos){
-    if (pos < 0 || pos >= length ) return false;
-    if (pos == 0){
+    if (pos < 1 || pos > length ) return false;
+    if (pos == 1){
         Node* temp = this->head;
         this->head = this->head->get_link();
         delete temp;
@@ -89,7 +89,7 @@ bool LinkedList::deletePosition(int pos){
     }
 
     Node* pointer = head;
-    int counter = 0;
+    int counter = 1;
     while (counter < pos-1 && pointer->get_link() != nullptr){
         pointer = pointer->get_link();
         counter++;
@@ -105,12 +105,12 @@ bool LinkedList::deletePosition(int pos){
 }
 
 int LinkedList::get(int pos){
-    if (pos < 0 || pos >= this->length){
+    if (pos < 1 || pos > this->length){
         return INT_MAX;
     }
 
     Node* pointer = head;
-    for (int i = 0; i < pos; i++){
+    for (int i = 1; i < pos; i++){
         pointer = pointer->get_link();
     }
     return pointer->get_data();
@@ -118,7 +118,7 @@ int LinkedList::get(int pos){
 
 int LinkedList::search(int target){
     Node* pointer = head;
-    int counter = 0;
+    int counter = 1;
     while (pointer != nullptr){
         if (pointer->get_data() == target){
             return counter;
