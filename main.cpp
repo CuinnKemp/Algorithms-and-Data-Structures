@@ -1,18 +1,35 @@
 #include <iostream>
+#include <string>
+#include <list>
 
 #include "LinkedList.h"
+#include "BigNumCalc.h"
+
 
 
 int main(){
-    int arr[] = {1,2,3,4,5,6};
+    BigNumCalc b1;
 
-    LinkedList list(arr, 6);
+    std::string s1 = "100", s2 = "100";
 
-    list.insertPosition(1, 100);
+    std::list<int> n1 = b1.buildBigNum(s1);
 
-    list.printList();
-    
-    std::cout << list.search(100) << std::endl;
+    std::list<int> n2 = b1.buildBigNum(s2);
 
-    std::cout << list.get(5) << std::endl;
+    for (auto i : n1){
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    for (auto i : n2){
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+
+    std::list<int> list = b1.sub(n1, n2);
+    for (auto i : list){
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
 }
