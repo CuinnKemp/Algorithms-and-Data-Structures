@@ -10,7 +10,7 @@
 int main(){
     BigNumCalc b1;
 
-    std::string s1 = "100", s2 = "100";
+    std::string s1 = "100", s2 = "50";
 
     std::list<int> n1 = b1.buildBigNum(s1);
 
@@ -27,7 +27,7 @@ int main(){
     std::cout << std::endl;
 
 
-    std::list<int> list = b1.sub(n1, n2);
+    std::list<int> list = b1.mul(n1, n2);
     for (auto i : list){
         std::cout << i << " ";
     }
