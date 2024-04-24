@@ -53,7 +53,7 @@ void QuickSort::quickSort(std::vector<int>& list, int low, int high){
     std::swap(list[low], list[right]);
 
     // call quicksort on the left and right partitions
-    return  quickSort(list, low, right-1), quickSort(list, right+1, high);;
+    return  quickSort(list, low, right-1), quickSort(list, right+1, high);
 }
 
 
