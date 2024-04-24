@@ -91,8 +91,10 @@ std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2){
     return num1;
 }
 
+
+// improved mul;
 std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2){
-    std::list<int> largerHold, *larger, *smaller;
+    std::list<int> result, *larger, *smaller;
     if (num1.size() >= num2.size()){
         larger = &num1;
         smaller = &num2;
@@ -101,13 +103,50 @@ std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2){
         smaller = &num1;
     }
 
-    largerHold = *larger;
+    int counter = 0;
     
-    
-    while (smaller->size() > 1 || (smaller->size() == 1 && smaller->front() != 1)){
-        *larger = this->add(*larger, largerHold);
-        *smaller = this->sub(*smaller, {1});
-    }
+    for (auto it = smaller->rbegin(); it != smaller->rend(); it++){
+        int carry = 0;
+        std::list<int> temp;
 
-    return *larger;
+        for (int i = 0; i < counter; i++){
+            temp.push_front(0);
+        }
+
+        for (auto it2 = larger->rbegin(); it2 != larger->rend(); it2++){
+            int product = (*it) * (*it2) + carry;
+            temp.push_front(product % 10);
+            carry = product / 10;
+        }
+        while (carry != 0){
+            temp.push_front(carry % 10);
+            carry /= 10;
+        }
+
+        result = add(result, temp);
+        counter++;
+    }
+    return result;
 }
+
+
+// std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2){
+//     std::list<int> largerHold, *larger, *smaller;
+//     if (num1.size() >= num2.size()){
+//         larger = &num1;
+//         smaller = &num2;
+//     } else {
+//         larger = &num2;
+//         smaller = &num1;
+//     }
+
+//     largerHold = *larger;
+    
+    
+//     while (smaller->size() > 1 || (smaller->size() == 1 && smaller->front() != 1)){
+//         *larger = this->add(*larger, largerHold);
+//         *smaller = this->sub(*smaller, {1});
+//     }
+
+//     return *larger;
+// }
