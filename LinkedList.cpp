@@ -131,10 +131,13 @@ int LinkedList::search(int target){
 }
 
 void LinkedList::printList(){
+    std::cout << "[";
     Node* pointer = head;
+    std::cout << pointer->get_data();
+    pointer = pointer->get_link();
     while (pointer != nullptr){
-        std::cout << pointer->get_data() << ", ";
+        std::cout << " " << pointer->get_data();
         pointer = pointer->get_link();
     }
-    std::cout << std::endl;
+    std::cout << "]" << std::endl;
 }
