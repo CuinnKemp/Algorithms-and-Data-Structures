@@ -10,19 +10,19 @@
 int main(){
     BigNumCalc b1;
 
-    std::string s1 = "333", s2 = "393";
+    std::string s1 = "14324325432532", s2 = "14324325432532";
 
     std::list<int> n1 = b1.buildBigNum(s1);
 
     std::list<int> n2 = b1.buildBigNum(s2);
 
     for (auto i : n1){
-        std::cout << i << " ";
+        std::cout << i;
     }
     std::cout << std::endl;
 
     for (auto i : n2){
-        std::cout << i << " ";
+        std::cout << i;
     }
     std::cout << std::endl;
 
