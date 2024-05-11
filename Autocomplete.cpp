@@ -9,7 +9,7 @@ Autocomplete::Autocomplete(){
 }
 
 Autocomplete::~Autocomplete(){
-    this->start = new TrieNode(' ');
+    deleteChildren(this->start);
 }
 
 void Autocomplete::deleteChildren(TrieNode* node){
@@ -21,7 +21,7 @@ void Autocomplete::deleteChildren(TrieNode* node){
 
 void Autocomplete::insert(std::string word){
     TrieNode* curNode = start;
-    for (int i = 0; i < word.length(); i++){
+    for (int i = 0; i < (int)word.length(); i++){
         if (curNode->children[word[i]] == nullptr){
             curNode->children[word[i]] = new TrieNode(word[i]);
         }
@@ -32,7 +32,7 @@ void Autocomplete::insert(std::string word){
 
 std::pair<bool,TrieNode*> Autocomplete::searchWord(std::string word){
     TrieNode* curNode = start;
-    for (int i = 0; i < word.length(); i++){
+    for (int i = 0; i < (int)word.length(); i++){
         if (curNode->children[word[i]] == nullptr){
             return {false,nullptr};
         }
