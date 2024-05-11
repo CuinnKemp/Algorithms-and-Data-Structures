@@ -1,0 +1,4 @@
+#ifndef PREFIXMATCHER
+#define PREFIXMATCHER
+
+#endif //PREFIXMATCHER
