@@ -71,34 +71,13 @@ template <typename T>
 void Heap<T>::remove(T value) {
   int i;
   bool found = false;
-  for (i = 0; i < values.size(); i++){
-    if (values[i] == value){
-      found = true;
+  for (i = 0; i < this->values.size(); i++){
+    if (this->values[i] == value){
+      std::swap(this->values[i], this->values.back());
+      this->values.pop_back();
       break;
     }
   }
-
-  if (!found)
-    return;
-
-  while (i < this->values.size()){
-    int left_child_index = i * 2 + 1;
-    int right_child_index = i * 2 + 2;
-    if (left_child_index > this->values.size())
-      break;
-
-    if (values[left_child_index] <= values[right_child_index]){
-      std::swap(values[i],values[right_child_index]);
-      i = right_child_index;
-    } else {
-      std::swap(values[i],values[left_child_index]);
-      i = left_child_index;
-    }
-  }
-
-  std::swap(this->values[i], this->values.back());
-
-  values.pop_back();
 }
 
 /*******************************/
