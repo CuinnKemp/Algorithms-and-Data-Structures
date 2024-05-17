@@ -14,18 +14,14 @@ void print(Heap<int> h1){
 
 int main(){
     Heap<int> h1({3,4,5});
-
-    print(h1);
-    cout << h1.getMin() << endl;
-    h1.insert(-1);
-    print(h1);
-    cout << h1.getMin() << endl;
-    print(h1);
-    h1.remove(-1);
+    
     print(h1);
     cout << h1.getMin() << endl;
 
-    h1.remove(8);
-    print(h1);
+    h1.remove(3);
+    h1.remove(5);
+
     cout << h1.getMin() << endl;
+
+    
 }

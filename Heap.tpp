@@ -81,8 +81,6 @@ void Heap<T>::remove(T value) {
   if (!found)
     return;
 
-  values[i] = INT_MAX;
-
   while (i < this->values.size()){
     int left_child_index = i * 2 + 1;
     int right_child_index = i * 2 + 2;
