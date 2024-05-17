@@ -7,11 +7,11 @@
 template <typename T>
 class Heap {
  private:
-  // std::vector<T> values;
+  std::vector<T> values;
   void heapify(int);
 
  public:
-  std::vector<T> values;
+  // std::vector<T> values;
   Heap();  // constructs an empty heap
 
   // constructs a heap with the values from the given vector
