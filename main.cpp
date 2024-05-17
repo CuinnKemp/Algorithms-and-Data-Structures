@@ -13,7 +13,7 @@ void print(Heap<int> h1){
 }
 
 int main(){
-    Heap<int> h1({10,9,8,7,6,5,4,3,2});
+    Heap<int> h1({3,4,5});
 
     print(h1);
     cout << h1.getMin() << endl;

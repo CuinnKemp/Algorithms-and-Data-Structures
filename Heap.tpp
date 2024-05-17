@@ -1,10 +1,6 @@
 #ifndef HEAP_H
 #define HEAP_H
 
-#include <bits/stdc++.h>
-using namespace std;
-
-
 #include <vector>
 #include <cmath>  // for floor
 
