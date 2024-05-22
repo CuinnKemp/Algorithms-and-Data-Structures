@@ -5,9 +5,9 @@
 #include <unordered_map>
 
 struct Document {
-    std::string name;
-    int license_limit;
-    int id;
+    std::string name = "";
+    int id = 0;
+    int license_limit = -1;
     std::unordered_set<int> licenses_used;
 
     Document() {}

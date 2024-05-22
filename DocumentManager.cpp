@@ -32,7 +32,7 @@ bool DocumentManager::borrowDocument(int docid, int patronID){
     if (this->documents.find(docid) == this->documents.end())
         return false;
 
-    if (this->documents[docid].licenses_used.size() + 1 > this->documents[docid].license_limit){
+    if ((int)this->documents[docid].licenses_used.size() + 1 > this->documents[docid].license_limit){
         return false;
     }
     
