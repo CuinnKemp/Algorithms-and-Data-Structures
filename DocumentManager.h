@@ -9,11 +9,10 @@ struct Document {
     int license_limit;
     int id;
     std::unordered_set<int> licenses_used;
-    Document(std::string name, int id, int license_limit){
-        this->name = name;
-        this->license_limit = license_limit;
-        this->id = id;
-    }
+
+    Document() {}
+    Document(std::string name, int id, int license_limit)
+        : name(name), id(id), license_limit(license_limit) {}
 };
 
 class DocumentManager {
